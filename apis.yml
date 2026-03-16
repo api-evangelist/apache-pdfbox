@@ -1,0 +1,34 @@
+aid: apache-pdfbox
+name: Apache PDFBox
+description: >-
+  Apache PDFBox is an open-source Java library for working with PDF documents. It allows creation of new PDF documents, manipulation of existing documents, and the ability to extract content from documents with support for digital signatures.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - PDF
+  - Document Processing
+  - Java
+  - Text Extraction
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-pdfbox:apache-pdfbox
+    name: Apache PDFBox
+    description: >-
+      PDFBox provides a Java API for creating, manipulating, rendering, and extracting text and images from PDF documents, with support for digital signatures, form filling, PDF/A validation, and font handling.
+    humanURL: https://pdfbox.apache.org/2.0/getting-started.html
+    tags:
+      - Java
+      - PDF
+      - Document Processing
+    properties:
+      - type: Documentation
+        url: https://pdfbox.apache.org/2.0/getting-started.html
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
