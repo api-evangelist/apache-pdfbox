@@ -1,0 +1,147 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pdfb": "https://pdfbox.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "CreateDocumentRequest": "pdfb:CreateDocumentRequest",
+    "DocumentInfo": "pdfb:DocumentInfo",
+    "TextExtractionResult": "pdfb:TextExtractionResult",
+    "PageList": "pdfb:PageList",
+    "PageInfo": "pdfb:PageInfo",
+    "DocumentMetadata": "pdfb:DocumentMetadata",
+    "MergeRequest": "pdfb:MergeRequest",
+    "SplitRequest": "pdfb:SplitRequest",
+    "SignRequest": "pdfb:SignRequest",
+    "FormFields": "pdfb:FormFields",
+    "FormField": "pdfb:FormField",
+    "title": {
+      "@id": "pdfb:title",
+      "@type": "xsd:string"
+    },
+    "author": {
+      "@id": "pdfb:author",
+      "@type": "xsd:string"
+    },
+    "pageSize": {
+      "@id": "pdfb:pageSize",
+      "@type": "xsd:string"
+    },
+    "documentId": {
+      "@id": "pdfb:documentId",
+      "@type": "xsd:string"
+    },
+    "pageCount": {
+      "@id": "pdfb:pageCount",
+      "@type": "xsd:integer"
+    },
+    "fileSize": {
+      "@id": "pdfb:fileSize",
+      "@type": "xsd:integer"
+    },
+    "version": {
+      "@id": "pdfb:version",
+      "@type": "xsd:string"
+    },
+    "text": {
+      "@id": "pdfb:text",
+      "@type": "xsd:string"
+    },
+    "wordCount": {
+      "@id": "pdfb:wordCount",
+      "@type": "xsd:integer"
+    },
+    "totalPages": {
+      "@id": "pdfb:totalPages",
+      "@type": "xsd:integer"
+    },
+    "pages": {
+      "@id": "pdfb:pages",
+      "@container": "@set"
+    },
+    "pageNumber": {
+      "@id": "pdfb:pageNumber",
+      "@type": "xsd:integer"
+    },
+    "width": {
+      "@id": "pdfb:width",
+      "@type": "xsd:decimal"
+    },
+    "height": {
+      "@id": "pdfb:height",
+      "@type": "xsd:decimal"
+    },
+    "rotation": {
+      "@id": "pdfb:rotation",
+      "@type": "xsd:integer"
+    },
+    "subject": {
+      "@id": "pdfb:subject",
+      "@type": "xsd:string"
+    },
+    "creator": {
+      "@id": "pdfb:creator",
+      "@type": "xsd:string"
+    },
+    "producer": {
+      "@id": "pdfb:producer",
+      "@type": "xsd:string"
+    },
+    "creationDate": {
+      "@id": "pdfb:creationDate",
+      "@type": "xsd:string"
+    },
+    "modificationDate": {
+      "@id": "pdfb:modificationDate",
+      "@type": "xsd:string"
+    },
+    "sourceDocumentIds": {
+      "@id": "pdfb:sourceDocumentIds",
+      "@container": "@set"
+    },
+    "outputTitle": {
+      "@id": "pdfb:outputTitle",
+      "@type": "xsd:string"
+    },
+    "splitAtPages": {
+      "@id": "pdfb:splitAtPages",
+      "@container": "@set"
+    },
+    "keystorePath": {
+      "@id": "pdfb:keystorePath",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "pdfb:password",
+      "@type": "xsd:string"
+    },
+    "reason": {
+      "@id": "pdfb:reason",
+      "@type": "xsd:string"
+    },
+    "location": {
+      "@id": "pdfb:location",
+      "@type": "xsd:string"
+    },
+    "fields": {
+      "@id": "pdfb:fields",
+      "@container": "@set"
+    },
+    "name": {
+      "@id": "pdfb:name",
+      "@type": "schema:name"
+    },
+    "type": {
+      "@id": "pdfb:type",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "pdfb:value",
+      "@type": "xsd:string"
+    },
+    "required": {
+      "@id": "pdfb:required",
+      "@type": "xsd:boolean"
+    }
+  }
+}

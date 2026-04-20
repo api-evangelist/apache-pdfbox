@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-structure/apache-pdfbox-page-list-structure.json",
+  "description": "PageList schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "documentId": {
+      "type": "string",
+      "example": "doc-abc123"
+    },
+    "totalPages": {
+      "type": "int32",
+      "example": 10
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PageInfo"
+      }
+    }
+  },
+  "name": "PageList"
+}

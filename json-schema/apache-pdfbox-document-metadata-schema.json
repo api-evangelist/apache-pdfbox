@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-schema/apache-pdfbox-document-metadata-schema.json",
+  "title": "DocumentMetadata",
+  "description": "DocumentMetadata schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "example": "Annual Report 2026"
+    },
+    "author": {
+      "type": "string",
+      "example": "Jane Doe"
+    },
+    "subject": {
+      "type": "string",
+      "example": "Financial Summary"
+    },
+    "creator": {
+      "type": "string",
+      "example": "Apache PDFBox"
+    },
+    "producer": {
+      "type": "string",
+      "example": "Apache PDFBox"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2026-04-19T10:00:00Z"
+    },
+    "modificationDate": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2026-04-19T11:00:00Z"
+    }
+  }
+}

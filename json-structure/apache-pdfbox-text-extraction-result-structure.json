@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-structure/apache-pdfbox-text-extraction-result-structure.json",
+  "description": "TextExtractionResult schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "documentId": {
+      "type": "string",
+      "example": "doc-abc123"
+    },
+    "text": {
+      "type": "string",
+      "example": "This is extracted text from the PDF document."
+    },
+    "pageCount": {
+      "type": "int32",
+      "example": 5
+    },
+    "wordCount": {
+      "type": "int32",
+      "example": 1234
+    }
+  },
+  "name": "TextExtractionResult"
+}

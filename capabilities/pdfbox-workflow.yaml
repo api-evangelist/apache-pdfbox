@@ -1,0 +1,138 @@
+naftiko: "1.0.0-alpha1"
+info:
+  label: "Apache PDFBox Document Processing Workflow"
+  description: "Workflow for creating, manipulating, extracting text from, and digitally signing PDF documents using Apache PDFBox."
+  tags:
+    - Apache PDFBox
+    - PDF
+    - Document Processing
+    - Digital Signatures
+  created: "2026-04-19"
+  modified: "2026-04-19"
+binds:
+  - namespace: env
+    keys:
+      PDFBOX_API_KEY: PDFBOX_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: pdfbox
+      baseUri: https://localhost:8080/pdfbox
+      description: "Apache PDFBox REST API"
+      resources:
+        - name: documents
+          path: /documents
+          description: "Document operations"
+          operations:
+            - name: createDocument
+              method: POST
+              description: "Create a PDF document"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: extractText
+              method: GET
+              description: "Extract text from PDF"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: pdfbox-api
+      description: "Unified REST API for PDF document processing."
+      resources:
+        - path: /v1/documents
+          name: documents
+          operations:
+            - method: POST
+              name: create-document
+              description: "Create PDF document"
+              call: "pdfbox.createDocument"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/documents/{documentId}/text
+          name: text-extraction
+          operations:
+            - method: GET
+              name: extract-text
+              description: "Extract text from PDF"
+              call: "pdfbox.extractText"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+    - type: mcp
+      port: 9090
+      namespace: pdfbox-mcp
+      transport: http
+      description: "MCP server for AI-assisted PDF document processing."
+      tools:
+        - name: create-document
+          description: "Create a new PDF document"
+          hints:
+            readOnly: false
+          call: "pdfbox.createDocument"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: extract-text
+          description: "Extract text content from a PDF document"
+          hints:
+            readOnly: true
+          call: "pdfbox.extractText"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-metadata
+          description: "Get PDF document metadata (title, author, dates)"
+          hints:
+            readOnly: true
+          call: "pdfbox.getMetadata"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-pages
+          description: "List pages and their dimensions in a PDF"
+          hints:
+            readOnly: true
+          call: "pdfbox.listPages"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: merge-documents
+          description: "Merge multiple PDF documents into one"
+          hints:
+            readOnly: false
+          call: "pdfbox.mergeDocuments"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: split-document
+          description: "Split a PDF document at specified page boundaries"
+          hints:
+            readOnly: false
+          call: "pdfbox.splitDocument"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: sign-document
+          description: "Apply a digital signature to a PDF document"
+          hints:
+            readOnly: false
+          call: "pdfbox.signDocument"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-form-fields
+          description: "Get interactive form fields from a PDF document"
+          hints:
+            readOnly: true
+          call: "pdfbox.getFormFields"
+          outputParameters:
+            - type: object
+              mapping: "$."

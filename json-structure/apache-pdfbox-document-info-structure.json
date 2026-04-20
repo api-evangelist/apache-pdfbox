@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-structure/apache-pdfbox-document-info-structure.json",
+  "description": "DocumentInfo schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "documentId": {
+      "type": "string",
+      "example": "doc-abc123"
+    },
+    "title": {
+      "type": "string",
+      "example": "My Document"
+    },
+    "pageCount": {
+      "type": "int32",
+      "example": 10
+    },
+    "fileSize": {
+      "type": "int32",
+      "example": 204800
+    },
+    "version": {
+      "type": "string",
+      "example": "1.4"
+    }
+  },
+  "name": "DocumentInfo"
+}

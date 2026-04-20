@@ -1,0 +1,68 @@
+vocabulary: "1.0.0"
+info:
+  provider: "Apache PDFBox"
+  description: "Vocabulary for Apache PDFBox PDF document processing API"
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: pdfbox
+      version: "3.0.0"
+      baseUrl: "https://localhost:8080/pdfbox"
+      status: active
+  resources:
+    - name: documents
+      api: pdfbox
+      actions: [create, get, extract, merge, split, sign]
+    - name: pages
+      api: pdfbox
+      actions: [list, get]
+    - name: forms
+      api: pdfbox
+      actions: [get, fill]
+    - name: signatures
+      api: pdfbox
+      actions: [sign, verify]
+  actions:
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: extract
+      httpMethod: GET
+      pattern: read
+    - name: merge
+      httpMethod: POST
+      pattern: write
+    - name: split
+      httpMethod: POST
+      pattern: write
+    - name: sign
+      httpMethod: POST
+      pattern: write
+capability:
+  workflows:
+    - name: Document Processing Workflow
+      file: capabilities/pdfbox-workflow.yaml
+      apis: [pdfbox]
+      tools: 8
+      personas: [Document Manager, Application Developer]
+  personas:
+    - id: document-manager
+      name: Document Manager
+      description: "Creates and manages PDF documents with metadata and signatures"
+    - id: application-developer
+      name: Application Developer
+      description: "Integrates PDF processing into applications"
+  domains:
+    - Document Processing
+    - PDF
+    - Digital Signatures
+crossReference:
+  - resource: documents
+    operations: [create, extract, merge, split]
+    workflows: [Document Processing Workflow]
+    personas: [Document Manager, Application Developer]
+  - resource: signatures
+    operations: [sign]
+    workflows: [Document Processing Workflow]
+    personas: [Document Manager]

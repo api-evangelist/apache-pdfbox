@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-schema/apache-pdfbox-split-request-schema.json",
+  "title": "SplitRequest",
+  "description": "SplitRequest schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "splitAtPages": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Page numbers at which to split",
+      "example": [
+        5,
+        10
+      ]
+    }
+  }
+}

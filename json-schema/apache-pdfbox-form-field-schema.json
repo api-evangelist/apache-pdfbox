@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-schema/apache-pdfbox-form-field-schema.json",
+  "title": "FormField",
+  "description": "FormField schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "example": "firstName"
+    },
+    "type": {
+      "type": "string",
+      "example": "PDTextField",
+      "enum": [
+        "PDTextField",
+        "PDCheckBox",
+        "PDRadioButton",
+        "PDComboBox",
+        "PDListBox",
+        "PDSignatureField"
+      ]
+    },
+    "value": {
+      "type": "string",
+      "example": "John"
+    },
+    "required": {
+      "type": "boolean",
+      "example": false
+    }
+  }
+}

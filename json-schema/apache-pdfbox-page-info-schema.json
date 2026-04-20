@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-schema/apache-pdfbox-page-info-schema.json",
+  "title": "PageInfo",
+  "description": "PageInfo schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "pageNumber": {
+      "type": "integer",
+      "example": 1
+    },
+    "width": {
+      "type": "number",
+      "example": 595.0
+    },
+    "height": {
+      "type": "number",
+      "example": 842.0
+    },
+    "rotation": {
+      "type": "integer",
+      "example": 0
+    }
+  }
+}

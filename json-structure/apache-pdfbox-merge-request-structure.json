@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-structure/apache-pdfbox-merge-request-structure.json",
+  "description": "MergeRequest schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "sourceDocumentIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "doc-001",
+        "doc-002"
+      ]
+    },
+    "outputTitle": {
+      "type": "string",
+      "example": "Merged Document"
+    }
+  },
+  "name": "MergeRequest"
+}

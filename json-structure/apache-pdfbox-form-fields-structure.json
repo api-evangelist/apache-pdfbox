@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-structure/apache-pdfbox-form-fields-structure.json",
+  "description": "FormFields schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "documentId": {
+      "type": "string",
+      "example": "doc-abc123"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/FormField"
+      }
+    }
+  },
+  "name": "FormFields"
+}

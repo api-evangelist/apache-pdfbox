@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-schema/apache-pdfbox-sign-request-schema.json",
+  "title": "SignRequest",
+  "description": "SignRequest schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "keystorePath": {
+      "type": "string",
+      "example": "keystore.p12"
+    },
+    "password": {
+      "type": "string",
+      "example": "keystore-password"
+    },
+    "reason": {
+      "type": "string",
+      "example": "Document approval"
+    },
+    "location": {
+      "type": "string",
+      "example": "San Francisco, CA"
+    }
+  }
+}

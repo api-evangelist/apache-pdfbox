@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-schema/apache-pdfbox-merge-request-schema.json",
+  "title": "MergeRequest",
+  "description": "MergeRequest schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "sourceDocumentIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "doc-001",
+        "doc-002"
+      ]
+    },
+    "outputTitle": {
+      "type": "string",
+      "example": "Merged Document"
+    }
+  }
+}

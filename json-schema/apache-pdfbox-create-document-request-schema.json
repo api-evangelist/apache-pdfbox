@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-schema/apache-pdfbox-create-document-request-schema.json",
+  "title": "CreateDocumentRequest",
+  "description": "CreateDocumentRequest schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "example": "My Document"
+    },
+    "author": {
+      "type": "string",
+      "example": "John Smith"
+    },
+    "pageSize": {
+      "type": "string",
+      "example": "A4",
+      "enum": [
+        "A4",
+        "LETTER",
+        "LEGAL",
+        "A3",
+        "A5"
+      ]
+    }
+  }
+}

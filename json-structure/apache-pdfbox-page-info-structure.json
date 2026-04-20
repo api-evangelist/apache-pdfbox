@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/json-structure/apache-pdfbox-page-info-structure.json",
+  "description": "PageInfo schema from Apache PDFBox",
+  "type": "object",
+  "properties": {
+    "pageNumber": {
+      "type": "int32",
+      "example": 1
+    },
+    "width": {
+      "type": "double",
+      "example": 595.0
+    },
+    "height": {
+      "type": "double",
+      "example": 842.0
+    },
+    "rotation": {
+      "type": "int32",
+      "example": 0
+    }
+  },
+  "name": "PageInfo"
+}
