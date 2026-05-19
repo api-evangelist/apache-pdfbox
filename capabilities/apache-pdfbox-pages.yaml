@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache PDFBox API — Pages
+  description: 'Apache PDFBox API — Pages. 1 operations. Lead operation: Apache PDFBox List Pages. Self-contained Naftiko
+    capability covering one Apache Pdfbox business surface.'
+  tags:
+  - Apache Pdfbox
+  - Pages
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_PDFBOX_API_KEY: APACHE_PDFBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: apache-pdfbox-pages
+    baseUri: https://{host}/pdfbox
+    description: Apache PDFBox API — Pages business capability. Self-contained, no shared references.
+    resources:
+    - name: documents-documentId-pages
+      path: /documents/{documentId}/pages
+      operations:
+      - name: listpages
+        method: GET
+        description: Apache PDFBox List Pages
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: apache-pdfbox-pages-rest
+    port: 8080
+    description: REST adapter for Apache PDFBox API — Pages. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/documents/{documentid}/pages
+      name: documents-documentid-pages
+      description: REST surface for documents-documentId-pages.
+      operations:
+      - method: GET
+        name: listpages
+        description: Apache PDFBox List Pages
+        call: apache-pdfbox-pages.listpages
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: apache-pdfbox-pages-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache PDFBox API — Pages. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: apache-pdfbox-list-pages
+      description: Apache PDFBox List Pages
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-pdfbox-pages.listpages
+      outputParameters:
+      - type: object
+        mapping: $.

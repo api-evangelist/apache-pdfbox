@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache PDFBox API — Operations
+  description: 'Apache PDFBox API — Operations. 2 operations. Lead operation: Apache PDFBox Merge Documents. Self-contained
+    Naftiko capability covering one Apache Pdfbox business surface.'
+  tags:
+  - Apache Pdfbox
+  - Operations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_PDFBOX_API_KEY: APACHE_PDFBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: apache-pdfbox-operations
+    baseUri: https://{host}/pdfbox
+    description: Apache PDFBox API — Operations business capability. Self-contained, no shared references.
+    resources:
+    - name: documents-documentId-merge
+      path: /documents/{documentId}/merge
+      operations:
+      - name: mergedocuments
+        method: POST
+        description: Apache PDFBox Merge Documents
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: documents-documentId-split
+      path: /documents/{documentId}/split
+      operations:
+      - name: splitdocument
+        method: POST
+        description: Apache PDFBox Split Document
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: apache-pdfbox-operations-rest
+    port: 8080
+    description: REST adapter for Apache PDFBox API — Operations. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/documents/{documentid}/merge
+      name: documents-documentid-merge
+      description: REST surface for documents-documentId-merge.
+      operations:
+      - method: POST
+        name: mergedocuments
+        description: Apache PDFBox Merge Documents
+        call: apache-pdfbox-operations.mergedocuments
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/documents/{documentid}/split
+      name: documents-documentid-split
+      description: REST surface for documents-documentId-split.
+      operations:
+      - method: POST
+        name: splitdocument
+        description: Apache PDFBox Split Document
+        call: apache-pdfbox-operations.splitdocument
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: apache-pdfbox-operations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache PDFBox API — Operations. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: apache-pdfbox-merge-documents
+      description: Apache PDFBox Merge Documents
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apache-pdfbox-operations.mergedocuments
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-pdfbox-split-document
+      description: Apache PDFBox Split Document
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apache-pdfbox-operations.splitdocument
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

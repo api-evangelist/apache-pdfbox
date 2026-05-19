@@ -1,0 +1,156 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache PDFBox API — Documents
+  description: 'Apache PDFBox API — Documents. 3 operations. Lead operation: Apache PDFBox Create Document. Self-contained
+    Naftiko capability covering one Apache Pdfbox business surface.'
+  tags:
+  - Apache Pdfbox
+  - Documents
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_PDFBOX_API_KEY: APACHE_PDFBOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: apache-pdfbox-documents
+    baseUri: https://{host}/pdfbox
+    description: Apache PDFBox API — Documents business capability. Self-contained, no shared references.
+    resources:
+    - name: documents
+      path: /documents
+      operations:
+      - name: createdocument
+        method: POST
+        description: Apache PDFBox Create Document
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: documents-documentId-metadata
+      path: /documents/{documentId}/metadata
+      operations:
+      - name: getmetadata
+        method: GET
+        description: Apache PDFBox Get Metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: documents-documentId-text
+      path: /documents/{documentId}/text
+      operations:
+      - name: extracttext
+        method: GET
+        description: Apache PDFBox Extract Text
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: startPage
+          in: query
+          type: integer
+          description: Start page number (1-based)
+        - name: endPage
+          in: query
+          type: integer
+          description: End page number (inclusive)
+  exposes:
+  - type: rest
+    namespace: apache-pdfbox-documents-rest
+    port: 8080
+    description: REST adapter for Apache PDFBox API — Documents. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/documents
+      name: documents
+      description: REST surface for documents.
+      operations:
+      - method: POST
+        name: createdocument
+        description: Apache PDFBox Create Document
+        call: apache-pdfbox-documents.createdocument
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/documents/{documentid}/metadata
+      name: documents-documentid-metadata
+      description: REST surface for documents-documentId-metadata.
+      operations:
+      - method: GET
+        name: getmetadata
+        description: Apache PDFBox Get Metadata
+        call: apache-pdfbox-documents.getmetadata
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/documents/{documentid}/text
+      name: documents-documentid-text
+      description: REST surface for documents-documentId-text.
+      operations:
+      - method: GET
+        name: extracttext
+        description: Apache PDFBox Extract Text
+        call: apache-pdfbox-documents.extracttext
+        with:
+          startPage: rest.startPage
+          endPage: rest.endPage
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: apache-pdfbox-documents-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache PDFBox API — Documents. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: apache-pdfbox-create-document
+      description: Apache PDFBox Create Document
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apache-pdfbox-documents.createdocument
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-pdfbox-get-metadata
+      description: Apache PDFBox Get Metadata
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-pdfbox-documents.getmetadata
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-pdfbox-extract-text
+      description: Apache PDFBox Extract Text
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-pdfbox-documents.extracttext
+      with:
+        startPage: tools.startPage
+        endPage: tools.endPage
+      outputParameters:
+      - type: object
+        mapping: $.

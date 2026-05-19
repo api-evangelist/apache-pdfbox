@@ -1,8 +1,7 @@
 aid: apache-pdfbox
 name: Apache PDFBox
-description: >-
-  Apache PDFBox is an open-source Java library for working with PDF documents. It allows creation of new PDF documents, manipulation of existing documents, and the ability to extract content from documents
-  with support for digital signatures.
+description: Apache PDFBox is an open-source Java library for working with PDF documents. It allows creation of new PDF documents,
+  manipulation of existing documents, and the ability to extract content from documents with support for digital signatures.
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -15,15 +14,14 @@ tags:
 - Apache
 - Open Source
 created: '2026-03-16'
-modified: '2026-04-19'
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/apis.yml
+modified: '2026-05-19'
+url: https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
 - aid: apache-pdfbox:apache-pdfbox
   name: Apache PDFBox
-  description: >-
-    PDFBox provides a Java API for creating, manipulating, rendering, and extracting text and images from PDF documents, with support for digital signatures, form filling, PDF/A validation, and font handling.
+  description: PDFBox provides a Java API for creating, manipulating, rendering, and extracting text and images from PDF documents,
+    with support for digital signatures, form filling, PDF/A validation, and font handling.
   humanURL: https://pdfbox.apache.org/2.0/getting-started.html
   tags:
   - Document Processing
@@ -36,6 +34,16 @@ apis:
     url: https://pdfbox.apache.org/2.0/getting-started.html
   - type: OpenAPI
     url: openapi/apache-pdfbox-api.yaml
+  - type: NaftikoCapability
+    url: capabilities/apache-pdfbox-documents.yaml
+  - type: NaftikoCapability
+    url: capabilities/apache-pdfbox-forms.yaml
+  - type: NaftikoCapability
+    url: capabilities/apache-pdfbox-operations.yaml
+  - type: NaftikoCapability
+    url: capabilities/apache-pdfbox-pages.yaml
+  - type: NaftikoCapability
+    url: capabilities/apache-pdfbox-signatures.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
@@ -48,8 +56,6 @@ common:
   url: rules/apache-pdfbox-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/apache-pdfbox-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/pdfbox-workflow.yaml
 - type: JSONLD
   url: json-ld/apache-pdfbox-context.jsonld
 - type: Features
