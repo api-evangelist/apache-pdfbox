@@ -34,15 +34,15 @@ apis:
     url: https://pdfbox.apache.org/2.0/getting-started.html
   - type: OpenAPI
     url: openapi/apache-pdfbox-api.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-pdfbox-documents.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-pdfbox-forms.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-pdfbox-operations.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-pdfbox-pages.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apache-pdfbox-signatures.yaml
 maintainers:
 - FN: Kin Lane
