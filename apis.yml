@@ -48,6 +48,10 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-pdfbox-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-pdfbox-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/apache/pdfbox
 - type: Documentation
@@ -58,6 +62,8 @@ common:
   url: vocabulary/apache-pdfbox-vocabulary.yaml
 - type: JSONLD
   url: json-ld/apache-pdfbox-context.jsonld
+- type: Blog
+  url: https://pdfbox.apache.org/blog/
 - type: Features
   data:
   - name: PDF Text Extraction
