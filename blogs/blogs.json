@@ -1,0 +1,14 @@
+{
+  "repo": "apache-pdfbox",
+  "feeds": [
+    {
+      "source": "https://pdfbox.apache.org/blog/",
+      "feed_url": "https://pdfbox.apache.org/blog/",
+      "title": "Apache PDFBox Blog",
+      "saved": 0,
+      "error": "parse_failed"
+    }
+  ],
+  "fetched": "2026-07-11T11:43:46Z",
+  "post_count": 25
+}
