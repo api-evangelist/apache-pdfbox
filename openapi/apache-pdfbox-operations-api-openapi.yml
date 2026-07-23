@@ -1,0 +1,125 @@
+openapi: 3.0.3
+info:
+  title: Apache PDFBox Documents Operations API
+  description: Apache PDFBox is an open-source Java library for working with PDF documents. This API represents the REST service interface for PDF creation, manipulation, text extraction, and digital signatures.
+  version: 3.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pdfbox.apache.org/
+servers:
+- url: https://{host}/pdfbox
+  description: Apache PDFBox REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Operations
+paths:
+  /documents/{documentId}/merge:
+    post:
+      operationId: mergeDocuments
+      summary: Apache PDFBox Merge Documents
+      description: Merge multiple PDF documents into one.
+      tags:
+      - Operations
+      parameters:
+      - $ref: '#/components/parameters/documentId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MergeRequest'
+      responses:
+        '200':
+          description: Merged document info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentInfo'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /documents/{documentId}/split:
+    post:
+      operationId: splitDocument
+      summary: Apache PDFBox Split Document
+      description: Split a PDF document into multiple parts.
+      tags:
+      - Operations
+      parameters:
+      - $ref: '#/components/parameters/documentId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SplitRequest'
+      responses:
+        '200':
+          description: Split documents info
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DocumentInfo'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    SplitRequest:
+      type: object
+      properties:
+        splitAtPages:
+          type: array
+          items:
+            type: integer
+          description: Page numbers at which to split
+          example:
+          - 5
+          - 10
+    DocumentInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        title:
+          type: string
+          example: My Document
+        pageCount:
+          type: integer
+          example: 10
+        fileSize:
+          type: integer
+          example: 204800
+        version:
+          type: string
+          example: '1.4'
+    MergeRequest:
+      type: object
+      properties:
+        sourceDocumentIds:
+          type: array
+          items:
+            type: string
+          example:
+          - doc-001
+          - doc-002
+        outputTitle:
+          type: string
+          example: Merged Document
+  parameters:
+    documentId:
+      name: documentId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Document identifier
+      example: doc-abc123
+x-generated-from: documentation

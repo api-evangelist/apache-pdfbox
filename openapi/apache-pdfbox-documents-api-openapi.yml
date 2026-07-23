@@ -1,0 +1,179 @@
+openapi: 3.0.3
+info:
+  title: Apache PDFBox Documents API
+  description: Apache PDFBox is an open-source Java library for working with PDF documents. This API represents the REST service interface for PDF creation, manipulation, text extraction, and digital signatures.
+  version: 3.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pdfbox.apache.org/
+servers:
+- url: https://{host}/pdfbox
+  description: Apache PDFBox REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Documents
+paths:
+  /documents:
+    post:
+      operationId: createDocument
+      summary: Apache PDFBox Create Document
+      description: Create a new empty PDF document.
+      tags:
+      - Documents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDocumentRequest'
+      responses:
+        '200':
+          description: Document created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentInfo'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /documents/{documentId}/text:
+    get:
+      operationId: extractText
+      summary: Apache PDFBox Extract Text
+      description: Extract plain text from a PDF document.
+      tags:
+      - Documents
+      parameters:
+      - $ref: '#/components/parameters/documentId'
+      - name: startPage
+        in: query
+        schema:
+          type: integer
+        description: Start page number (1-based)
+      - name: endPage
+        in: query
+        schema:
+          type: integer
+        description: End page number (inclusive)
+      responses:
+        '200':
+          description: Extracted text
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TextExtractionResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /documents/{documentId}/metadata:
+    get:
+      operationId: getMetadata
+      summary: Apache PDFBox Get Metadata
+      description: Get PDF document metadata including title, author, creation date.
+      tags:
+      - Documents
+      parameters:
+      - $ref: '#/components/parameters/documentId'
+      responses:
+        '200':
+          description: Document metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentMetadata'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    CreateDocumentRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          example: My Document
+        author:
+          type: string
+          example: John Smith
+        pageSize:
+          type: string
+          example: A4
+          enum:
+          - A4
+          - LETTER
+          - LEGAL
+          - A3
+          - A5
+    DocumentInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        title:
+          type: string
+          example: My Document
+        pageCount:
+          type: integer
+          example: 10
+        fileSize:
+          type: integer
+          example: 204800
+        version:
+          type: string
+          example: '1.4'
+    TextExtractionResult:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        text:
+          type: string
+          example: This is extracted text from the PDF document.
+        pageCount:
+          type: integer
+          example: 5
+        wordCount:
+          type: integer
+          example: 1234
+    DocumentMetadata:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Annual Report 2026
+        author:
+          type: string
+          example: Jane Doe
+        subject:
+          type: string
+          example: Financial Summary
+        creator:
+          type: string
+          example: Apache PDFBox
+        producer:
+          type: string
+          example: Apache PDFBox
+        creationDate:
+          type: string
+          format: date-time
+          example: '2026-04-19T10:00:00Z'
+        modificationDate:
+          type: string
+          format: date-time
+          example: '2026-04-19T11:00:00Z'
+  parameters:
+    documentId:
+      name: documentId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Document identifier
+      example: doc-abc123
+x-generated-from: documentation

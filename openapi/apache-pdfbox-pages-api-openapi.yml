@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: Apache PDFBox Documents Pages API
+  description: Apache PDFBox is an open-source Java library for working with PDF documents. This API represents the REST service interface for PDF creation, manipulation, text extraction, and digital signatures.
+  version: 3.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pdfbox.apache.org/
+servers:
+- url: https://{host}/pdfbox
+  description: Apache PDFBox REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Pages
+paths:
+  /documents/{documentId}/pages:
+    get:
+      operationId: listPages
+      summary: Apache PDFBox List Pages
+      description: List all pages in a PDF document with metadata.
+      tags:
+      - Pages
+      parameters:
+      - $ref: '#/components/parameters/documentId'
+      responses:
+        '200':
+          description: List of pages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    PageInfo:
+      type: object
+      properties:
+        pageNumber:
+          type: integer
+          example: 1
+        width:
+          type: number
+          example: 595.0
+        height:
+          type: number
+          example: 842.0
+        rotation:
+          type: integer
+          example: 0
+    PageList:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        totalPages:
+          type: integer
+          example: 10
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PageInfo'
+  parameters:
+    documentId:
+      name: documentId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Document identifier
+      example: doc-abc123
+x-generated-from: documentation

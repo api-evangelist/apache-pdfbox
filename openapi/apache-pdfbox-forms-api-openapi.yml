@@ -1,0 +1,82 @@
+openapi: 3.0.3
+info:
+  title: Apache PDFBox Documents Forms API
+  description: Apache PDFBox is an open-source Java library for working with PDF documents. This API represents the REST service interface for PDF creation, manipulation, text extraction, and digital signatures.
+  version: 3.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pdfbox.apache.org/
+servers:
+- url: https://{host}/pdfbox
+  description: Apache PDFBox REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Forms
+paths:
+  /documents/{documentId}/forms:
+    get:
+      operationId: getFormFields
+      summary: Apache PDFBox Get Form Fields
+      description: Get all interactive form fields (AcroForm) from a PDF document.
+      tags:
+      - Forms
+      parameters:
+      - $ref: '#/components/parameters/documentId'
+      responses:
+        '200':
+          description: List of form fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FormFields'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    FormFields:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormField'
+    FormField:
+      type: object
+      properties:
+        name:
+          type: string
+          example: firstName
+        type:
+          type: string
+          example: PDTextField
+          enum:
+          - PDTextField
+          - PDCheckBox
+          - PDRadioButton
+          - PDComboBox
+          - PDListBox
+          - PDSignatureField
+        value:
+          type: string
+          example: John
+        required:
+          type: boolean
+          example: false
+  parameters:
+    documentId:
+      name: documentId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Document identifier
+      example: doc-abc123
+x-generated-from: documentation
