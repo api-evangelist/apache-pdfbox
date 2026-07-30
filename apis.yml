@@ -3,9 +3,21 @@ name: Apache PDFBox
 description: Apache PDFBox is an open-source Java library for working with PDF documents. It allows creation of new PDF documents,
   manipulation of existing documents, and the ability to extract content from documents with support for digital signatures.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-pdfbox.png
 tags:
 - Document Processing
 - Java
@@ -18,22 +30,101 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: apache-pdfbox:apache-pdfbox
-  name: Apache PDFBox
-  description: PDFBox provides a Java API for creating, manipulating, rendering, and extracting text and images from PDF documents,
-    with support for digital signatures, form filling, PDF/A validation, and font handling.
+- aid: apache-pdfbox:apache-pdfbox-documents-api
+  name: Apache PDFBox Documents API
+  description: The Documents API from Apache PDFBox — 3 operation(s) for documents.
   humanURL: https://pdfbox.apache.org/2.0/getting-started.html
   tags:
-  - Document Processing
-  - Java
-  - PDF
-  - Apache
-  - Open Source
+  - Documents
   properties:
+  - type: OpenAPI
+    url: openapi/apache-pdfbox-documents-api-openapi.yml
   - type: Documentation
     url: https://pdfbox.apache.org/2.0/getting-started.html
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-forms.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-operations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-signatures.yaml
+- aid: apache-pdfbox:apache-pdfbox-forms-api
+  name: Apache PDFBox Forms API
+  description: The Forms API from Apache PDFBox — 1 operation(s) for forms.
+  humanURL: https://pdfbox.apache.org/2.0/getting-started.html
+  tags:
+  - Forms
+  properties:
   - type: OpenAPI
-    url: openapi/apache-pdfbox-api.yaml
+    url: openapi/apache-pdfbox-forms-api-openapi.yml
+  - type: Documentation
+    url: https://pdfbox.apache.org/2.0/getting-started.html
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-forms.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-operations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-signatures.yaml
+- aid: apache-pdfbox:apache-pdfbox-operations-api
+  name: Apache PDFBox Operations API
+  description: The Operations API from Apache PDFBox — 2 operation(s) for operations.
+  humanURL: https://pdfbox.apache.org/2.0/getting-started.html
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-pdfbox-operations-api-openapi.yml
+  - type: Documentation
+    url: https://pdfbox.apache.org/2.0/getting-started.html
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-forms.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-operations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-signatures.yaml
+- aid: apache-pdfbox:apache-pdfbox-pages-api
+  name: Apache PDFBox Pages API
+  description: The Pages API from Apache PDFBox — 1 operation(s) for pages.
+  humanURL: https://pdfbox.apache.org/2.0/getting-started.html
+  tags:
+  - Pages
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-pdfbox-pages-api-openapi.yml
+  - type: Documentation
+    url: https://pdfbox.apache.org/2.0/getting-started.html
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-forms.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-operations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apache-pdfbox-signatures.yaml
+- aid: apache-pdfbox:apache-pdfbox-signatures-api
+  name: Apache PDFBox Signatures API
+  description: The Signatures API from Apache PDFBox — 1 operation(s) for signatures.
+  humanURL: https://pdfbox.apache.org/2.0/getting-started.html
+  tags:
+  - Signatures
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-pdfbox-signatures-api-openapi.yml
+  - type: Documentation
+    url: https://pdfbox.apache.org/2.0/getting-started.html
   - type: X-NaftikoCapability
     url: capabilities/apache-pdfbox-documents.yaml
   - type: X-NaftikoCapability
