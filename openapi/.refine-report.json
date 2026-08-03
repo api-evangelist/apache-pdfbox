@@ -1,0 +1,22 @@
+{
+  "provider": "apache-pdfbox",
+  "sources": [
+    "apache-pdfbox-documents-api-openapi.yml",
+    "apache-pdfbox-forms-api-openapi.yml",
+    "apache-pdfbox-operations-api-openapi.yml",
+    "apache-pdfbox-pages-api-openapi.yml",
+    "apache-pdfbox-signatures-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-pdfbox-documents-api-openapi.yml",
+    "apache-pdfbox-forms-api-openapi.yml",
+    "apache-pdfbox-operations-api-openapi.yml",
+    "apache-pdfbox-pages-api-openapi.yml",
+    "apache-pdfbox-signatures-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
