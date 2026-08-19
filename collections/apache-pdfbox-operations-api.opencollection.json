@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache PDFBox Documents Operations API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache PDFBox Merge Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/pdfbox/documents/:documentId/merge",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "doc-abc123",
+                "type": "path",
+                "description": "Document identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Merge multiple PDF documents into one."
+        },
+        {
+          "info": {
+            "name": "Apache PDFBox Split Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/pdfbox/documents/:documentId/split",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "doc-abc123",
+                "type": "path",
+                "description": "Document identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Split a PDF document into multiple parts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

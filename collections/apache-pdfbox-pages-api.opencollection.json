@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache PDFBox Documents Pages API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache PDFBox List Pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/pdfbox/documents/:documentId/pages",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "doc-abc123",
+                "type": "path",
+                "description": "Document identifier"
+              }
+            ]
+          },
+          "docs": "List all pages in a PDF document with metadata."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

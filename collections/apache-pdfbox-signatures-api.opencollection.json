@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache PDFBox Documents Signatures API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Signatures",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache PDFBox Sign Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/pdfbox/documents/:documentId/sign",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "doc-abc123",
+                "type": "path",
+                "description": "Document identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Apply a digital signature to a PDF document."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

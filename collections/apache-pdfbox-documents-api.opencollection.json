@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache PDFBox Documents API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache PDFBox Create Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/pdfbox/documents",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new empty PDF document."
+        },
+        {
+          "info": {
+            "name": "Apache PDFBox Extract Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/pdfbox/documents/:documentId/text",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "doc-abc123",
+                "type": "path",
+                "description": "Document identifier"
+              },
+              {
+                "name": "startPage",
+                "value": "",
+                "type": "query",
+                "description": "Start page number (1-based)"
+              },
+              {
+                "name": "endPage",
+                "value": "",
+                "type": "query",
+                "description": "End page number (inclusive)"
+              }
+            ]
+          },
+          "docs": "Extract plain text from a PDF document."
+        },
+        {
+          "info": {
+            "name": "Apache PDFBox Get Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/pdfbox/documents/:documentId/metadata",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "doc-abc123",
+                "type": "path",
+                "description": "Document identifier"
+              }
+            ]
+          },
+          "docs": "Get PDF document metadata including title, author, creation date."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
