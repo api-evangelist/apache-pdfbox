@@ -28,7 +28,7 @@ tags:
 created: '2026-03-16'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: apache-pdfbox:apache-pdfbox-documents-api
   name: Apache PDFBox Documents API
