@@ -3,6 +3,17 @@ name: Apache PDFBox
 description: Apache PDFBox is an open-source Java library for working with PDF documents. It allows creation of new PDF documents,
   manipulation of existing documents, and the ability to extract content from documents with support for digital signatures.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
