@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache PDFBox Documents Forms API
   description: Apache PDFBox is an open-source Java library for working with PDF documents. This API represents the REST service interface for PDF creation, manipulation, text extraction, and digital signatures.
@@ -38,16 +38,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    FormFields:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormField'
     FormField:
       type: object
       properties:
@@ -70,6 +60,16 @@ components:
         required:
           type: boolean
           example: false
+    FormFields:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormField'
   parameters:
     documentId:
       name: documentId

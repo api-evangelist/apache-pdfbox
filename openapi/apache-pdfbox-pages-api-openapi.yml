@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache PDFBox Documents Pages API
   description: Apache PDFBox is an open-source Java library for working with PDF documents. This API represents the REST service interface for PDF creation, manipulation, text extraction, and digital signatures.
@@ -38,6 +38,19 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PageList:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        totalPages:
+          type: integer
+          example: 10
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PageInfo'
     PageInfo:
       type: object
       properties:
@@ -53,19 +66,6 @@ components:
         rotation:
           type: integer
           example: 0
-    PageList:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        totalPages:
-          type: integer
-          example: 10
-        pages:
-          type: array
-          items:
-            $ref: '#/components/schemas/PageInfo'
   parameters:
     documentId:
       name: documentId

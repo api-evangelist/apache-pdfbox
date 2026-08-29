@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache PDFBox Documents API
   description: Apache PDFBox is an open-source Java library for working with PDF documents. This API represents the REST service interface for PDF creation, manipulation, text extraction, and digital signatures.
@@ -90,57 +90,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    CreateDocumentRequest:
-      type: object
-      properties:
-        title:
-          type: string
-          example: My Document
-        author:
-          type: string
-          example: John Smith
-        pageSize:
-          type: string
-          example: A4
-          enum:
-          - A4
-          - LETTER
-          - LEGAL
-          - A3
-          - A5
-    DocumentInfo:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        title:
-          type: string
-          example: My Document
-        pageCount:
-          type: integer
-          example: 10
-        fileSize:
-          type: integer
-          example: 204800
-        version:
-          type: string
-          example: '1.4'
-    TextExtractionResult:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        text:
-          type: string
-          example: This is extracted text from the PDF document.
-        pageCount:
-          type: integer
-          example: 5
-        wordCount:
-          type: integer
-          example: 1234
     DocumentMetadata:
       type: object
       properties:
@@ -167,6 +116,57 @@ components:
           type: string
           format: date-time
           example: '2026-04-19T11:00:00Z'
+    TextExtractionResult:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        text:
+          type: string
+          example: This is extracted text from the PDF document.
+        pageCount:
+          type: integer
+          example: 5
+        wordCount:
+          type: integer
+          example: 1234
+    DocumentInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        title:
+          type: string
+          example: My Document
+        pageCount:
+          type: integer
+          example: 10
+        fileSize:
+          type: integer
+          example: 204800
+        version:
+          type: string
+          example: '1.4'
+    CreateDocumentRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          example: My Document
+        author:
+          type: string
+          example: John Smith
+        pageSize:
+          type: string
+          example: A4
+          enum:
+          - A4
+          - LETTER
+          - LEGAL
+          - A3
+          - A5
   parameters:
     documentId:
       name: documentId

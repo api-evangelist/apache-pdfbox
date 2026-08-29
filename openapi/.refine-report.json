@@ -17,6 +17,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "apache-pdfbox-documents-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-pdfbox-forms-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-pdfbox-operations-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-pdfbox-pages-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-pdfbox-signatures-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }
