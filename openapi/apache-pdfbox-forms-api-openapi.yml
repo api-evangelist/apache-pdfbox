@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apache PDFBox Documents Forms API
+  title: Apache PDFBox Forms API
   description: Apache PDFBox is an open-source Java library for working with PDF documents. This API represents the REST service interface for PDF creation, manipulation, text extraction, and digital signatures.
   version: 3.0.0
   license:

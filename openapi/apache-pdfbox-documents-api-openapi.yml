@@ -116,21 +116,6 @@ components:
           type: string
           format: date-time
           example: '2026-04-19T11:00:00Z'
-    TextExtractionResult:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        text:
-          type: string
-          example: This is extracted text from the PDF document.
-        pageCount:
-          type: integer
-          example: 5
-        wordCount:
-          type: integer
-          example: 1234
     DocumentInfo:
       type: object
       properties:
@@ -149,6 +134,21 @@ components:
         version:
           type: string
           example: '1.4'
+    TextExtractionResult:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        text:
+          type: string
+          example: This is extracted text from the PDF document.
+        pageCount:
+          type: integer
+          example: 5
+        wordCount:
+          type: integer
+          example: 1234
     CreateDocumentRequest:
       type: object
       properties:

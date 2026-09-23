@@ -1,11 +1,7 @@
 {
   "provider": "apache-pdfbox",
   "sources": [
-    "apache-pdfbox-documents-api-openapi.yml",
-    "apache-pdfbox-forms-api-openapi.yml",
-    "apache-pdfbox-operations-api-openapi.yml",
-    "apache-pdfbox-pages-api-openapi.yml",
-    "apache-pdfbox-signatures-api-openapi.yml"
+    "_ae-authored/apache-pdfbox-api.yaml"
   ],
   "outputs": [
     "apache-pdfbox-documents-api-openapi.yml",
@@ -18,12 +14,20 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "apache-pdfbox-documents-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pdfbox-forms-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pdfbox-operations-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pdfbox-pages-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pdfbox-signatures-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-pdfbox-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-pdfbox-api.yaml: declared missing tag: Documents",
+    "apache-pdfbox-api.yaml: declared missing tag: Forms",
+    "apache-pdfbox-api.yaml: declared missing tag: Operations",
+    "apache-pdfbox-api.yaml: declared missing tag: Pages",
+    "apache-pdfbox-api.yaml: declared missing tag: Signatures",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "apache-pdfbox-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pdfbox-forms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pdfbox-operations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pdfbox-pages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pdfbox-signatures-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
