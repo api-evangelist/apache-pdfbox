@@ -71,30 +71,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    SplitRequest:
-      type: object
-      properties:
-        splitAtPages:
-          type: array
-          items:
-            type: integer
-          description: Page numbers at which to split
-          example:
-          - 5
-          - 10
-    MergeRequest:
-      type: object
-      properties:
-        sourceDocumentIds:
-          type: array
-          items:
-            type: string
-          example:
-          - doc-001
-          - doc-002
-        outputTitle:
-          type: string
-          example: Merged Document
     DocumentInfo:
       type: object
       properties:
@@ -113,6 +89,30 @@ components:
         version:
           type: string
           example: '1.4'
+    MergeRequest:
+      type: object
+      properties:
+        sourceDocumentIds:
+          type: array
+          items:
+            type: string
+          example:
+          - doc-001
+          - doc-002
+        outputTitle:
+          type: string
+          example: Merged Document
+    SplitRequest:
+      type: object
+      properties:
+        splitAtPages:
+          type: array
+          items:
+            type: integer
+          description: Page numbers at which to split
+          example:
+          - 5
+          - 10
   parameters:
     documentId:
       name: documentId

@@ -38,6 +38,16 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    FormFields:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormField'
     FormField:
       type: object
       properties:
@@ -60,16 +70,6 @@ components:
         required:
           type: boolean
           example: false
-    FormFields:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormField'
   parameters:
     documentId:
       name: documentId
