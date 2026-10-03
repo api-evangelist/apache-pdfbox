@@ -37,6 +37,15 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    documentId:
+      name: documentId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Document identifier
+      example: doc-abc123
   schemas:
     FormFields:
       type: object
@@ -70,13 +79,4 @@ components:
         required:
           type: boolean
           example: false
-  parameters:
-    documentId:
-      name: documentId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Document identifier
-      example: doc-abc123
 x-generated-from: documentation

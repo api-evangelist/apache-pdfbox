@@ -105,6 +105,24 @@ components:
         wordCount:
           type: integer
           example: 1234
+    DocumentInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        title:
+          type: string
+          example: My Document
+        pageCount:
+          type: integer
+          example: 10
+        fileSize:
+          type: integer
+          example: 204800
+        version:
+          type: string
+          example: '1.4'
     DocumentMetadata:
       type: object
       properties:
@@ -149,24 +167,6 @@ components:
           - LEGAL
           - A3
           - A5
-    DocumentInfo:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        title:
-          type: string
-          example: My Document
-        pageCount:
-          type: integer
-          example: 10
-        fileSize:
-          type: integer
-          example: 204800
-        version:
-          type: string
-          example: '1.4'
   parameters:
     documentId:
       name: documentId

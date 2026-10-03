@@ -37,20 +37,16 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    documentId:
+      name: documentId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Document identifier
+      example: doc-abc123
   schemas:
-    PageList:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        totalPages:
-          type: integer
-          example: 10
-        pages:
-          type: array
-          items:
-            $ref: '#/components/schemas/PageInfo'
     PageInfo:
       type: object
       properties:
@@ -66,13 +62,17 @@ components:
         rotation:
           type: integer
           example: 0
-  parameters:
-    documentId:
-      name: documentId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Document identifier
-      example: doc-abc123
+    PageList:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        totalPages:
+          type: integer
+          example: 10
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PageInfo'
 x-generated-from: documentation
