@@ -37,15 +37,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    documentId:
-      name: documentId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Document identifier
-      example: doc-abc123
   schemas:
     PageInfo:
       type: object
@@ -75,4 +66,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PageInfo'
+  parameters:
+    documentId:
+      name: documentId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Document identifier
+      example: doc-abc123
 x-generated-from: documentation

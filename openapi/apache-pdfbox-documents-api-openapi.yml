@@ -90,6 +90,21 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    TextExtractionResult:
+      type: object
+      properties:
+        documentId:
+          type: string
+          example: doc-abc123
+        text:
+          type: string
+          example: This is extracted text from the PDF document.
+        pageCount:
+          type: integer
+          example: 5
+        wordCount:
+          type: integer
+          example: 1234
     DocumentMetadata:
       type: object
       properties:
@@ -134,21 +149,6 @@ components:
           - LEGAL
           - A3
           - A5
-    TextExtractionResult:
-      type: object
-      properties:
-        documentId:
-          type: string
-          example: doc-abc123
-        text:
-          type: string
-          example: This is extracted text from the PDF document.
-        pageCount:
-          type: integer
-          example: 5
-        wordCount:
-          type: integer
-          example: 1234
     DocumentInfo:
       type: object
       properties:

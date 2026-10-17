@@ -43,15 +43,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    documentId:
-      name: documentId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Document identifier
-      example: doc-abc123
   schemas:
     DocumentInfo:
       type: object
@@ -86,4 +77,13 @@ components:
         location:
           type: string
           example: San Francisco, CA
+  parameters:
+    documentId:
+      name: documentId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Document identifier
+      example: doc-abc123
 x-generated-from: documentation
