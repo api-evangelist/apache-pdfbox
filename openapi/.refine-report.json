@@ -1,9 +1,12 @@
 {
   "provider": "apache-pdfbox",
   "sources": [
+    "_original/apache-pdfbox-openapi.json",
     "_ae-authored/apache-pdfbox-api.yaml"
   ],
   "outputs": [
+    "apache-pdfbox-queues-api-openapi.yml",
+    "apache-pdfbox-status-api-openapi.yml",
     "apache-pdfbox-documents-api-openapi.yml",
     "apache-pdfbox-forms-api-openapi.yml",
     "apache-pdfbox-operations-api-openapi.yml",
@@ -14,14 +17,15 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-pdfbox-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
     "apache-pdfbox-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apache-pdfbox-api.yaml: declared missing tag: Documents",
     "apache-pdfbox-api.yaml: declared missing tag: Forms",
     "apache-pdfbox-api.yaml: declared missing tag: Operations",
     "apache-pdfbox-api.yaml: declared missing tag: Pages",
     "apache-pdfbox-api.yaml: declared missing tag: Signatures",
-    "apis.yml register: already-registered"
+    "apis.yml register: written (+2 apis, 7 total)"
   ],
   "skipped": [
     "apache-pdfbox-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
