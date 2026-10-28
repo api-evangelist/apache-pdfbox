@@ -1,4 +1,4 @@
-# Apache PDFBox (apache-pdfbox)
+# Apache PDFBox
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,123 +66,190 @@
 
 Apache PDFBox is an open-source Java library for working with PDF documents. It allows creation of new PDF documents, manipulation of existing documents, and the ability to extract content from documents with support for digital signatures.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-pdfbox/refs/heads/main/apis.yml)
+**Areas:** Document Processing · Java · PDF · Text Extraction · Apache · Open Source
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache PDFBox on APIs.io
 
-## Tags:
+Everything profiled for Apache PDFBox is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-pdfbox/](https://apis.io/providers/apache-pdfbox/)** — or go straight to one of the APIs or properties below.
 
- - Document Processing, Java, PDF, Text Extraction, Apache, Open Source
+### APIs (5)
 
-## Timestamps
+- [Apache PDFBox Documents API](https://apis.io/apis/apache-pdfbox/apache-pdfbox-documents-api/) — The Documents API from Apache PDFBox — 3 operation(s) for documents.
+- [Apache PDFBox Forms API](https://apis.io/apis/apache-pdfbox/apache-pdfbox-forms-api/) — The Forms API from Apache PDFBox — 1 operation(s) for forms.
+- [Apache PDFBox Operations API](https://apis.io/apis/apache-pdfbox/apache-pdfbox-operations-api/) — The Operations API from Apache PDFBox — 2 operation(s) for operations.
+- [Apache PDFBox Pages API](https://apis.io/apis/apache-pdfbox/apache-pdfbox-pages-api/) — The Pages API from Apache PDFBox — 1 operation(s) for pages.
+- [Apache PDFBox Signatures API](https://apis.io/apis/apache-pdfbox/apache-pdfbox-signatures-api/) — The Signatures API from Apache PDFBox — 1 operation(s) for signatures.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache PDFBox
-PDFBox provides a Java API for creating, manipulating, rendering, and extracting text and images from PDF documents, with support for digital signatures, form filling, PDF/A validation, and font handling.
+#### Agentic access (1)
 
-**Human URL:** [https://pdfbox.apache.org/2.0/getting-started.html](https://pdfbox.apache.org/2.0/getting-started.html)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apache Pdfbox Agentic Access](https://apis.io/agentic-access/apache-pdfbox/apache-pdfbox-agentic-access/)
 
- - Document Processing, Java, PDF, Apache, Open Source
+#### JSON Schema (11)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://pdfbox.apache.org/2.0/getting-started.html)
-- [OpenAPI](openapi/apache-pdfbox-api.yaml)
+- [CreateDocumentRequest](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-create-document-request/)
+- [DocumentInfo](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-document-info/)
+- [DocumentMetadata](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-document-metadata/)
+- [FormField](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-form-field/)
+- [FormFields](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-form-fields/)
+- [MergeRequest](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-merge-request/)
+- [PageInfo](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-page-info/)
+- [PageList](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-page-list/)
+- [SignRequest](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-sign-request/)
+- [SplitRequest](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-split-request/)
+- [TextExtractionResult](https://apis.io/schemas/apache-pdfbox/apache-pdfbox-text-extraction-result/)
 
-## Common Properties
+#### JSON Structure (11)
 
-- [GitHubOrganization](https://github.com/apache/pdfbox)
+Data models expressed in JSON Structure.
+
+- [Apache Pdfbox Create Document Request Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-create-document-request-structure/)
+- [Apache Pdfbox Document Info Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-document-info-structure/)
+- [Apache Pdfbox Document Metadata Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-document-metadata-structure/)
+- [Apache Pdfbox Form Field Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-form-field-structure/)
+- [Apache Pdfbox Form Fields Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-form-fields-structure/)
+- [Apache Pdfbox Merge Request Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-merge-request-structure/)
+- [Apache Pdfbox Page Info Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-page-info-structure/)
+- [Apache Pdfbox Page List Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-page-list-structure/)
+- [Apache Pdfbox Sign Request Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-sign-request-structure/)
+- [Apache Pdfbox Split Request Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-split-request-structure/)
+- [Apache Pdfbox Text Extraction Result Structure](https://apis.io/json-structure/apache-pdfbox/apache-pdfbox-text-extraction-result-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apache Pdfbox Context](https://apis.io/jsonld/apache-pdfbox/apache-pdfbox-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache Pdfbox Vocabulary](https://apis.io/vocabularies/apache-pdfbox/apache-pdfbox-vocabulary/)
+
+#### Examples (11)
+
+Example requests and responses.
+
+- [Apache Pdfbox Create Document Request Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-create-document-request-example/)
+- [Apache Pdfbox Document Info Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-document-info-example/)
+- [Apache Pdfbox Document Metadata Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-document-metadata-example/)
+- [Apache Pdfbox Form Field Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-form-field-example/)
+- [Apache Pdfbox Form Fields Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-form-fields-example/)
+- [Apache Pdfbox Merge Request Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-merge-request-example/)
+- [Apache Pdfbox Page Info Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-page-info-example/)
+- [Apache Pdfbox Page List Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-page-list-example/)
+- [Apache Pdfbox Sign Request Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-sign-request-example/)
+- [Apache Pdfbox Split Request Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-split-request-example/)
+- [Apache Pdfbox Text Extraction Result Example](https://apis.io/examples/apache-pdfbox/apache-pdfbox-text-extraction-result-example/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Apache PDFBox Documents API](https://apis.io/collections/apache-pdfbox/open-apache-pdfbox-documents-api/)
+- [Apache PDFBox Documents Forms API](https://apis.io/collections/apache-pdfbox/open-apache-pdfbox-forms-api/)
+- [Apache PDFBox Documents Operations API](https://apis.io/collections/apache-pdfbox/open-apache-pdfbox-operations-api/)
+- [Apache PDFBox Documents Pages API](https://apis.io/collections/apache-pdfbox/open-apache-pdfbox-pages-api/)
+- [Apache PDFBox Documents Signatures API](https://apis.io/collections/apache-pdfbox/open-apache-pdfbox-signatures-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache PDFBox — jsonschema rules](https://apis.io/rules/apache-pdfbox/apache-pdfbox-jsonschema-spectral-rules/)
+- [Apache PDFBox API Rules](https://apis.io/rules/apache-pdfbox/apache-pdfbox-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Pdfbox Domain Security](https://apis.io/security/apache-pdfbox/apache-pdfbox-domain-security/)
+- [Apache Pdfbox Vulnerability Disclosure](https://apis.io/security/apache-pdfbox/apache-pdfbox-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Pdfbox Plans Pricing](https://apis.io/plans/apache-pdfbox/apache-pdfbox-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Pdfbox Rate Limits](https://apis.io/rate-limits/apache-pdfbox/apache-pdfbox-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Pdfbox Finops](https://apis.io/finops/apache-pdfbox/apache-pdfbox-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://pdfbox.apache.org/)
-- [SpectralRules](rules/apache-pdfbox-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-pdfbox-vocabulary.yaml)
-- [NaftikoCapability](capabilities/pdfbox-workflow.yaml)
-- [JSON-LD](json-ld/apache-pdfbox-context.jsonld)
+- [Blog](https://pdfbox.apache.org/blog/)
+- [GitHub](https://github.com/apache/pdfbox)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| PDF Text Extraction | Extract plain text and structured content from PDF documents |
-| PDF Creation | Create new PDF documents programmatically with Java API |
-| PDF Manipulation | Merge, split, rotate, and resize pages in existing PDFs |
-| Digital Signatures | Apply and verify digital signatures for document authenticity |
-| Form Filling | Read and fill interactive PDF forms (AcroForms) |
-| PDF/A Validation | Validate and create PDF/A documents for archiving |
-| Font Handling | Embed and extract fonts, handle Type 1, TrueType, and OpenType |
+**Kin Score 19.1** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 19.0 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| Invoice Processing | Extract data from PDF invoices for automated processing |
-| Document Generation | Generate PDF reports, contracts, and certificates programmatically |
-| Legal Document Management | Digitally sign and verify legal documents |
-| Form Data Collection | Fill PDF forms and extract submitted data |
-| Archive Management | Convert documents to PDF/A for long-term archiving |
+**Agent readiness 15.4** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Apache Tika | Content detection and text extraction integration |
-| Spring Boot | Spring Boot starter for PDF processing in web applications |
-| Maven Central | Available as org.apache.pdfbox on Maven Central |
-| iText/OpenPDF | Complementary PDF library for advanced PDF generation |
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-pdfbox/](https://apis.io/providers/apache-pdfbox/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Apache PDFBox API](openapi/apache-pdfbox-api.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache PDFBox: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [Document Info](json-schema/apache-pdfbox-document-info-schema.json)
-- [Page Info](json-schema/apache-pdfbox-page-info-schema.json)
-- [Document Metadata](json-schema/apache-pdfbox-document-metadata-schema.json)
-- [Form Field](json-schema/apache-pdfbox-form-field-schema.json)
-- [And more...](json-schema/)
-
-### JSON Structure
-
-- [Apache PDFBox JSON Structures](json-structure/)
-
-### JSON-LD
-
-- [Apache PDFBox Context](json-ld/apache-pdfbox-context.jsonld)
-
-### Examples
-
-- [Apache PDFBox Examples](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Document Processing Workflow](capabilities/pdfbox-workflow.yaml) | Apache PDFBox | 8 | Document Manager, Application Developer |
-
-## Vocabulary
-
-- [Apache PDFBox Vocabulary](vocabulary/apache-pdfbox-vocabulary.yaml) — Unified taxonomy mapping PDF processing resources, actions, workflows, and personas
-
-## Rules
-
-- [Apache PDFBox Spectral Rules](rules/apache-pdfbox-spectral-rules.yml) — Rules enforcing Apache PDFBox API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-pdfbox/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
